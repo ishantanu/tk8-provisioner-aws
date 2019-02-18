@@ -139,7 +139,7 @@ func AWSInstall() {
 		mvProvisionerHosts.Wait()
 
 		// Check if Kubeadm is enabled
-		EnableKubeadm()
+		// EnableKubeadm()
 
 		//Start Kubernetes Installation
 		//Enable load balancer api access and copy the kubeconfig file locally

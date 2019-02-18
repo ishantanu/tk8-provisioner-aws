@@ -34,7 +34,7 @@ func KubesprayInit() {
 		os.Exit(1)
 	} else {
 		// issue-23 kubespray upstream
-		gitClone := exec.Command("git", "clone", "-b", kubesprayVersion, "--single-branch", "https://github.com/kubernauts/kubespray")
+		gitClone := exec.Command("git", "clone", "-b", kubesprayVersion, "--single-branch", "https://github.com/ishantanu/kubespray")
 		stdout, err := gitClone.StdoutPipe()
 		gitClone.Stderr = gitClone.Stdout
 		gitClone.Start()

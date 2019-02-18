@@ -14,7 +14,7 @@ type AwsCredentials struct {
 }
 
 var (
-	kubesprayVersion = "version-0-4"
+	kubesprayVersion = "master"
 )
 
 // DistOS defines the structure to hold the dist OS informations.
@@ -149,19 +149,19 @@ func GetClusterConfig() ClusterConfig {
 }
 
 // EnableKubeadm check for kubeadm_enable option and set the config respectively in playbook.
-func EnableKubeadm() {
-	ReadViperConfigFile("config")
-	kubeadmEnabled := viper.GetString("aws.kubeadm_enabled")
-	if kubeadmEnabled == "true" {
-		viper.SetConfigName("main")
-		viper.AddConfigPath("./kubespray/roles/kubespray-defaults/defaults")
-		err := viper.ReadInConfig()
-		common.ErrorCheck("Error reading the main.yaml config file", err)
-		viper.Set("kubeadm_enabled", true)
-		err = viper.WriteConfig()
-		common.ErrorCheck("Error writing the main.yaml config file", err)
-	}
-}
+//func EnableKubeadm() {
+//	ReadViperConfigFile("config")
+//	kubeadmEnabled := viper.GetString("aws.kubeadm_enabled")
+//	if kubeadmEnabled == "true" {
+//		viper.SetConfigName("main")
+//		viper.AddConfigPath("./kubespray/roles/kubespray-defaults/defaults")
+//		err := viper.ReadInConfig()
+//		common.ErrorCheck("Error reading the main.yaml config file", err)
+//		viper.Set("kubeadm_enabled", true)
+//		err = viper.WriteConfig()
+//		common.ErrorCheck("Error writing the main.yaml config file", err)
+//	}
+//}
 
 func SetNetworkPlugin(clusterFolder string) {
 
